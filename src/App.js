@@ -1,24 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { Fragment } from 'react';
+import CustomComponent from './customComponent';
 
 function App() {
+  const arr=["Alma","Armud","Heyva","Nar"]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {arr.map((item,index)=>(
+        <Fragment key={index}>
+        <h1>{item}</h1>
+        </Fragment>
+      ))}
+      <CustomComponent/>
+    </>
   );
 }
 
